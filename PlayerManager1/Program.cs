@@ -74,7 +74,7 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
 
                 // Wait for user to press a key...
                 Console.Write("\nPress any key to continue...");
-                Console.ReadKey(true);
+                Console.Read();
                 Console.WriteLine("\n");
 
                 // Loop keeps going until players choses to quit (option 4)
@@ -86,9 +86,11 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void ShowMenu()
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            
+            Console.WriteLine("Enter 1 for     Inserting New Player");
+            Console.WriteLine("Enter 2 for     Listing Players");
+            Console.WriteLine("Enter 3 for     Listing Players with score greater than inserted");
+            Console.WriteLine("Enter 4 for     Exit Program");
         }
 
         /// <summary>
@@ -96,9 +98,16 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void InsertPlayer()
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            
+            Console.WriteLine("Insert the name of the new Player. ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Insert the score of the new Player. ");
+            int score = int.Parse(Console.ReadLine());
+
+            Player player = new Player(name, score);
+            playerList.Add(player);
+
         }
 
         /// <summary>
@@ -112,9 +121,11 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </param>
         private static void ListPlayers(IEnumerable<Player> playersToList)
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+            
+            foreach (Player player in playersToList)
+            {
+                Console.WriteLine($"Name={player.Name} Score={player.Score}");
+            }
         }
 
         /// <summary>
@@ -122,9 +133,17 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </summary>
         private void ListPlayersWithScoreGreaterThan()
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+           
+            Console.WriteLine("Please insert the score to check if it's greater than. ");
+            int minScore = int.Parse(Console.ReadLine());
+
+            foreach(Player player in playerList)
+            {
+                if (player.Score > minScore)
+                {
+                    Console.WriteLine(player.Name);
+                }
+            }
         }
 
         /// <summary>
@@ -136,9 +155,17 @@ namespace PlayerManager1 // >>> Change to PlayerManager2 for exercise 4 <<< //
         /// </returns>
         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
-            // /////////////////// //
-            // COMPLETE ME PLEASE! //
-            // /////////////////// //
+           
+            List<Player> newList = new List<Player>();
+
+            foreach (Player player in playerList)
+            {
+                if (player.Score >  minScore)
+                {
+                    newList.Add(player);
+                }
+            }
+            return newList;
         }
     }
 }
