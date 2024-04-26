@@ -33,8 +33,8 @@ namespace PlayerManager2  // >>> Change to PlayerManager2 for exercise 4 <<< //
             // Initialize the player list with two players using collection
             // initialization syntax
             playerList = new List<Player>() {
-                new Player("Kratos", 6969),
-                new Player("Drake", 4200)
+                new Player("Best player ever", 100),
+                new Player("An even better player", 500)
             };
         }
 

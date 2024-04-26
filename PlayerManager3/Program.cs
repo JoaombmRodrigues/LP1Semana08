@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace PlayerManager3  // >>> Change to PlayerManager3 for exercise 5 <<< //
+namespace PlayerManager3
 {
     /// <summary>
     /// The player listing program.
@@ -32,9 +31,10 @@ namespace PlayerManager3  // >>> Change to PlayerManager3 for exercise 5 <<< //
         {
             // Initialize the player list with two players using collection
             // initialization syntax
-            playerList = new List<Player>() {
-                new Player("Kratos", 6969),
-                new Player("Drake", 4200)
+            playerList = new List<Player>() 
+            {
+                new Player("Best player ever", 100),
+                new Player("An even better player", 500)
             };
         }
 
@@ -163,7 +163,7 @@ namespace PlayerManager3  // >>> Change to PlayerManager3 for exercise 5 <<< //
                     yield return player;
                 }
             }
-            yield break;            
+            yield break;           
         }
-    }
+    }  
 }
