@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PlayerManager2  // >>> Change to PlayerManager2 for exercise 4 <<< //
+namespace PlayerManager3  // >>> Change to PlayerManager3 for exercise 5 <<< //
 {
     /// <summary>
     /// The player listing program.
