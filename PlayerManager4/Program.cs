@@ -163,7 +163,7 @@ namespace PlayerManager4
                     yield return player;
                 }
             }
-            yield break;           
+            yield break; 
         }
-    }  
+    }
 }

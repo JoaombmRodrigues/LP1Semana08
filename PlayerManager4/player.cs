@@ -13,10 +13,10 @@ namespace PlayerManager4
             Score = score;
         }
 
-        public string Name { get; }
+        public string Name { get; } 
         public int Score { get; set; }
 
-        public int CompareTo(Player other)
+        public int CompareTo(Player other) 
         {
             if (other == null) return 1; 
             if (Score > other.Score) return 1;
